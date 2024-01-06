@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { myTheme } from '../../../../styles/Theme.styled';
 import { CVTitle } from '../CVTitle';
 
 type AboutPropsType = {
@@ -19,4 +20,6 @@ const StyledAbout = styled.div`
   border: 1px solid red;
 `;
 
-const AboutDescription = styled.p``;
+const AboutDescription = styled.p`
+  color: ${myTheme.colors.grey.dark};
+`;

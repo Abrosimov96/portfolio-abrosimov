@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { myTheme } from '../../styles/Theme.styled';
 
 type MenuPropsType = {
   items: string[];
@@ -19,7 +20,10 @@ export const Menu = (props: MenuPropsType) => {
 const StyledMenu = styled.nav`
   ul {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     justify-content: center;
+    li {
+      color: ${myTheme.colors.grey.dark};
+    }
   }
 `;

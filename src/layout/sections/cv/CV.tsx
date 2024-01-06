@@ -3,7 +3,6 @@ import { FlexWrapper } from '../../../components/FlexWrapper';
 import { About } from './about/About';
 import { Education } from './education/Education';
 import { Experience } from './experience/Experience';
-import portrait from '../../../assets/images/photo.webp';
 
 export const CV = () => {
   return (
@@ -19,7 +18,6 @@ export const CV = () => {
           <Experience title={'Work Experience'} />
           <Education title={'Education'} />
         </FlexWrapper>
-        {/* <Photo src={portrait} /> */}
         <CVWrapper />
       </FlexWrapper>
     </StyledCV>
@@ -32,12 +30,6 @@ const StyledCV = styled.section`
 `;
 
 const CVWrapper = styled.section`
-  min-width: 40vw;
-`;
-
-const Photo = styled.img`
-  height: 350px;
-  width: 350px;
-  object-fit: cover;
-  border-radius: 100%;
+  min-width: 400px;
+  border: 1px solid yellow;
 `;

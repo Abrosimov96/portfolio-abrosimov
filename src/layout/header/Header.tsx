@@ -6,10 +6,10 @@ import { Social } from '../../components/social/Social';
 
 const menuItems = [
   'Home',
-  'Skills',
-  'Works',
-  'Testimony',
-  'Contacts',
+  'About',
+  'Tech Stack',
+  'Projects',
+  'Contact',
 ];
 
 const socialItems = ['git', 'facebook', 'linkedIn'];
@@ -29,6 +29,6 @@ export const Header = () => {
 const StyledHeader = styled.header`
   background-color: #faca7e;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 `;

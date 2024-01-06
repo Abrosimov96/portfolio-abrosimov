@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FlexWrapper } from '../../../../../components/FlexWrapper';
 import { Icon } from '../../../../../components/icon/Icon';
+import { myTheme } from '../../../../../styles/Theme.styled';
 
 type WorkPropsType = {
   jobTitle: string;
@@ -64,10 +65,18 @@ const SyledWork = styled.div`
   justify-content: space-between;
 `;
 
-const JobTitle = styled.h5``;
+const JobTitle = styled.h5`
+  color: ${myTheme.colors.grey.dark};
+`;
 
-const CompanyName = styled.span``;
+const CompanyName = styled.span`
+  color: ${myTheme.colors.grey.light};
+`;
 
-const JobType = styled.span``;
+const JobType = styled.span`
+  color: ${myTheme.colors.accent.dark};
+`;
 
-const JobPeriod = styled.span``;
+const JobPeriod = styled.span`
+  color: ${myTheme.colors.grey.light};
+`;
