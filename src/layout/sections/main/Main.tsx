@@ -29,7 +29,7 @@ const StyledMain = styled.main`
   justify-content: space-around;
 `;
 
-const MainTitle = styled.h2`
+const MainTitle = styled.h1`
   color: ${myTheme.colors.secondary};
 `;
 
@@ -39,15 +39,6 @@ const StyledName = styled.span`
   -webkit-text-fill-color: transparent;
 `;
 
-const Photo = styled.img`
-  height: 350px;
-  width: 350px;
-  object-fit: cover;
-  border-radius: 100%;
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
-`;
-
 const PhotoWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -55,4 +46,13 @@ const PhotoWrapper = styled.div`
   padding: 9px;
   border-radius: 100%;
   background-image: linear-gradient(${myTheme.colors.gradient});
+`;
+
+const Photo = styled.img`
+  height: 350px;
+  width: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 `;

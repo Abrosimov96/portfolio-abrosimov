@@ -27,22 +27,26 @@ export const ProjectDescription = (
       </TechStack>
       <FlexWrapper justify="space-between">
         <FlexWrapper>
-          <Icon
-            iconId={'link'}
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-          />
-          <Link href="">Live Preview</Link>
+          <Link href="">
+            <Icon
+              iconId={'link'}
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+            />
+            Live Preview
+          </Link>
         </FlexWrapper>
         <FlexWrapper>
-          <Icon
-            iconId={'linkGit'}
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-          />
-          <Link href="">View Code</Link>
+          <Link href="">
+            <Icon
+              iconId={'linkGit'}
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+            />
+            View Code
+          </Link>
         </FlexWrapper>
       </FlexWrapper>
     </StyledDescription>
@@ -56,7 +60,7 @@ const StyledDescription = styled.div`
   padding: 25px 30px 27px 30px;
 `;
 
-const Title = styled.h5`
+const Title = styled.h4`
   color: ${myTheme.colors.project};
 `;
 
@@ -71,5 +75,7 @@ const TechStack = styled.span`
 const Stack = styled.span``;
 
 const Link = styled.a`
+  display: flex;
+  align-items: center;
   color: ${myTheme.colors.project};
 `;

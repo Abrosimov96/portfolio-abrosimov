@@ -10,7 +10,9 @@ export const Social = (props: SocialPropsType) => {
     <StyledSocial>
       {props.items.map((item, index) => (
         <li key={index}>
-          <Icon iconId={item} />
+          <a href="#">
+            <Icon iconId={item} />
+          </a>
         </li>
       ))}
     </StyledSocial>

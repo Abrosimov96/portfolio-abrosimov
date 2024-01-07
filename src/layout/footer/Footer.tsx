@@ -7,7 +7,7 @@ import { Phone } from '../../components/Phone';
 import { Social } from '../../components/social/Social';
 import { myTheme } from '../../styles/Theme.styled';
 
-const socialItems = ['git', 'facebook', 'linkedIn'];
+const socialItems = ['git', 'twitter', 'linkedIn'];
 
 const menuItems = [
   'Home',
@@ -43,7 +43,6 @@ export const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
-  min-height: 50vh;
   background-color: #98faff;
 `;
 

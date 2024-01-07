@@ -10,7 +10,9 @@ export const Menu = (props: MenuPropsType) => {
     <StyledMenu>
       <ul>
         {props.items.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li key={index}>
+            <a href="#">{item}</a>
+          </li>
         ))}
       </ul>
     </StyledMenu>
