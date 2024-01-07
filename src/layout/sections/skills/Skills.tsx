@@ -10,6 +10,7 @@ const skillsItems = [
   'react',
   'redux',
   'tailwind',
+  'git-icon',
   'sass',
   'vscode',
   'github',

@@ -18,9 +18,12 @@ type WorkPropsType = {
 export const Work = (props: WorkPropsType) => {
   return (
     <SyledWork>
-      <JobTitle>{props.jobTitle}</JobTitle>
       <FlexWrapper justify="space-between" align="center">
-        <FlexWrapper justify="space-between">
+        <JobTitle>{props.jobTitle}</JobTitle>
+        <JobType>{props.type}</JobType>
+      </FlexWrapper>
+      <FlexWrapper justify="space-between" align="end">
+        <FlexWrapper justify="space-between" align="center">
           <Icon
             iconId="company"
             width="16"
@@ -41,8 +44,7 @@ export const Work = (props: WorkPropsType) => {
           )}
         </FlexWrapper>
         <FlexWrapper direction="column" align="end">
-          <JobType>{props.type}</JobType>
-          <FlexWrapper>
+          <FlexWrapper align="center">
             <Icon
               iconId="calendar"
               width="16"

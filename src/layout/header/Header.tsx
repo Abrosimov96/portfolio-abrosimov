@@ -12,7 +12,7 @@ const menuItems = [
   'Contact',
 ];
 
-const socialItems = ['git', 'facebook', 'linkedIn'];
+const socialItems = ['git', 'twitter', 'linkedIn'];
 
 export const Header = () => {
   return (
