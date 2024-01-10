@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Container } from '../../components/Container.styled';
 import { FlexWrapper } from '../../components/FlexWrapper';
 import { Logo } from '../../components/logo/Logo';
 import { Menu } from '../../components/menu/Menu';
@@ -17,18 +18,24 @@ const socialItems = ['git', 'twitter', 'linkedIn'];
 export const Header = () => {
   return (
     <StyledHeader>
-      <Logo />
-      <FlexWrapper align="center" gap="50px">
-        <Menu items={menuItems} />
-        <Social items={socialItems} />
-      </FlexWrapper>
+      <Container>
+        <FlexWrapper align="center" justify="space-between">
+          <Logo />
+          <FlexWrapper align="center" gap="50px">
+            <Menu items={menuItems} />
+            <Social items={socialItems} />
+          </FlexWrapper>
+        </FlexWrapper>
+      </Container>
     </StyledHeader>
   );
 };
 
 const StyledHeader = styled.header`
-  background-color: #faca7e;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  padding: 40px 0 20px;
 `;

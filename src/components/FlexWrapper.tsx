@@ -10,6 +10,7 @@ type FlexWrapperPropsType = {
   align?: 'center' | 'start' | 'end';
   wrap?: 'wrap' | 'wrap-reverse';
   gap?: string;
+  columnGap?: string;
 };
 
 export const FlexWrapper = styled.div<FlexWrapperPropsType>`
@@ -18,5 +19,6 @@ export const FlexWrapper = styled.div<FlexWrapperPropsType>`
   justify-content: ${(props) => props.justify || 'start'};
   align-items: ${(props) => props.align || 'stretch'};
   flex-wrap: ${(props) => props.wrap || 'nowrap'};
-  gap: ${(props) => props.gap || '0px'};
+  gap: ${(props) => props.gap || ''};
+  column-gap: ${(props) => props.columnGap || ''};
 `;

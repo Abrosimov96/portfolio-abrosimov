@@ -8,12 +8,14 @@ import project4 from '../../../assets/images/proj4.webp';
 import project5 from '../../../assets/images/proj5.webp';
 import project6 from '../../../assets/images/proj6.webp';
 import { FlexWrapper } from '../../../components/FlexWrapper';
+import { Container } from '../../../components/Container.styled';
+import { myTheme } from '../../../styles/Theme.styled';
 
 const projectsItems = [
   {
     imgSrc: project1,
     title: 'Project Tile goes here',
-    text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
+    text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy contentThis is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
     techStack: ['HTML', 'JavaScript', 'SASS', 'React', 'TypeScript'],
   },
   {
@@ -50,24 +52,23 @@ const projectsItems = [
 
 export const Projects = () => {
   return (
-    <StykedProjects>
-      <SectionTitle
-        title="Projects"
-        text="Things I’ve built so far"
-      />
-      <FlexWrapper gap="34px" wrap="wrap" justify="space-around">
-        {projectsItems.map((item, index) => (
-          <Project {...item} />
-        ))}
-      </FlexWrapper>
-    </StykedProjects>
+    <StyledProjects>
+      <Container>
+        <SectionTitle
+          title="Projects"
+          text="Things I’ve built so far"
+        />
+        <FlexWrapper wrap="wrap" columnGap="34px">
+          {projectsItems.map((item, index) => (
+            <Project {...item} />
+          ))}
+        </FlexWrapper>
+      </Container>
+    </StyledProjects>
   );
 };
 
-const StykedProjects = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #fff;
+const StyledProjects = styled.section`
+  line-height: 12px;
+  ${myTheme.sectionMarginBottom}
 `;

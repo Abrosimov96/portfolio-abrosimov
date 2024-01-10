@@ -28,6 +28,4 @@ export const Education = (props: EducationPropsType) => {
   );
 };
 
-const StyledEducation = styled.div`
-  border: 1px solid red;
-`;
+const StyledEducation = styled.div``;

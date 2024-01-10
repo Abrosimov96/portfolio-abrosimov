@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Container } from '../../components/Container.styled';
 import { Email } from '../../components/Email';
 import { FlexWrapper } from '../../components/FlexWrapper';
 import { Logo } from '../../components/logo/Logo';
@@ -19,35 +20,39 @@ const menuItems = [
 
 export const Footer = () => {
   return (
-    <>
-      <StyledFooter>
-        <FlexWrapper justify="space-around" align="center">
-          <Logo />
-          <FlexWrapper gap="50px" align="center">
-            <Phone>+91 12345 09876</Phone>
-            <Email>info@example.com</Email>
-            <Social items={socialItems} />
+    <StyledFooter>
+      <Container>
+        <FooterWrapper>
+          <FlexWrapper justify="space-between" align="center">
+            <Logo />
+            <FlexWrapper gap="50px" align="center">
+              <Phone>+91 12345 09876</Phone>
+              <Email>info@example.com</Email>
+              <Social items={socialItems} />
+            </FlexWrapper>
           </FlexWrapper>
-        </FlexWrapper>
-        <hr />
-        <FlexWrapper justify="space-around" align="center">
-          <Menu items={menuItems} />
-          <Copyright>
-            Designed and built by <span>Pavan MG</span> with{' '}
-            <span>Love</span> & <span>Coffee</span>
-          </Copyright>
-        </FlexWrapper>
-      </StyledFooter>
-    </>
+        </FooterWrapper>
+        <CopyrightWrapper>
+          <FlexWrapper justify="space-between" align="center">
+            <Menu items={menuItems} />
+            <Copyright>
+              Designed and built by <span>Pavan MG</span> with{' '}
+              <span>Love</span> & <span>Coffee</span>
+            </Copyright>
+          </FlexWrapper>
+        </CopyrightWrapper>
+      </Container>
+    </StyledFooter>
   );
 };
 
-const StyledFooter = styled.footer`
-  background-color: #98faff;
-`;
+const StyledFooter = styled.footer``;
 
 const Copyright = styled.p`
   color: ${myTheme.colors.grey.dark};
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4; /* 144.444% */
   span {
     background-image: linear-gradient(
       90deg,
@@ -57,4 +62,13 @@ const Copyright = styled.p`
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+`;
+
+const FooterWrapper = styled.div`
+  padding-bottom: 50px;
+  border-bottom: 2px solid ${myTheme.colors.grey.light};
+`;
+
+const CopyrightWrapper = styled.div`
+  padding: 45px 0 60px;
 `;

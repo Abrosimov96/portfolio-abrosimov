@@ -16,10 +16,10 @@ export const About = (props: AboutPropsType) => {
   );
 };
 
-const StyledAbout = styled.div`
-  border: 1px solid red;
-`;
+const StyledAbout = styled.div``;
 
 const AboutDescription = styled.p`
+  font-size: 18px;
+  font-weight: 400;
   color: ${myTheme.colors.grey.dark};
 `;

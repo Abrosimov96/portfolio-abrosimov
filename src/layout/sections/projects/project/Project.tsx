@@ -22,12 +22,12 @@ export const Project = (props: ProjectPropsType) => {
 };
 
 const StyledProject = styled.div`
-  width: 375px;
-  background-color: snow;
+  max-width: 375px;
+  width: 100%;
   border-radius: 20px;
   overflow: hidden;
-
   box-shadow: 2px 2px 100px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 62px;
 `;
 
 const ProjectImage = styled.img`

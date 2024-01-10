@@ -13,4 +13,5 @@ export const myTheme = {
     project: '#000',
     gradient: '90deg, #13b0f5 -2.06%,#e70faa 100%',
   },
+  sectionMarginBottom: 'margin-bottom: 200px;',
 };

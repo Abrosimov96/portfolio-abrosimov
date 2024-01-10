@@ -2,34 +2,38 @@ import styled from 'styled-components';
 import { FlexWrapper } from '../../../components/FlexWrapper';
 import portrait from '../../../assets/images/photo.webp';
 import { myTheme } from '../../../styles/Theme.styled';
+import { Container } from '../../../components/Container.styled';
 
 export const Main = () => {
   return (
     <StyledMain>
-      <FlexWrapper justify="space-between" align="center">
-        <MainTitle>
-          Hi 👋,
-          <br /> My name is
-          <br /> <StyledName>Anton Abrosimov</StyledName>
-          <br /> I build things for web
-        </MainTitle>
-        <PhotoWrapper>
-          <Photo src={portrait} />
-        </PhotoWrapper>
-      </FlexWrapper>
+      <Container>
+        <FlexWrapper justify="space-between" align="center">
+          <MainTitle>
+            Hi 👋,
+            <br /> My name is
+            <br /> <StyledName>Anton Abrosimov</StyledName>
+            <br /> I build things for web
+          </MainTitle>
+          <PhotoWrapper>
+            <Photo src={portrait} />
+          </PhotoWrapper>
+        </FlexWrapper>
+      </Container>
     </StyledMain>
   );
 };
 
-const StyledMain = styled.main`
-  min-height: 90vh;
-  background-color: #b6ffad;
+const StyledMain = styled.section`
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-around;
 `;
 
 const MainTitle = styled.h1`
+  font-size: 58px;
+  font-weight: 700;
+  letter-spacing: -1px;
   color: ${myTheme.colors.secondary};
 `;
 
@@ -46,6 +50,28 @@ const PhotoWrapper = styled.div`
   padding: 9px;
   border-radius: 100%;
   background-image: linear-gradient(${myTheme.colors.gradient});
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 444px;
+    height: 444px;
+    border-image: linear-gradient(#666, #66666600) 30;
+    border-width: 1px;
+    border-style: solid;
+    transform: rotate(105deg);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 444px;
+    height: 444px;
+    border-image: linear-gradient(#666, #66666600) 30;
+    border-width: 1px;
+    border-style: solid;
+    transform: rotate(145deg);
+  }
 `;
 
 const Photo = styled.img`

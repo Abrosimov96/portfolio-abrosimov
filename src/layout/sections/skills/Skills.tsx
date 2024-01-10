@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { Container } from '../../../components/Container.styled';
 import { FlexWrapper } from '../../../components/FlexWrapper';
+import { myTheme } from '../../../styles/Theme.styled';
 import { SectionTitle } from '../SectionTitle';
 import { Skill } from './skill/Skill';
 
@@ -19,15 +21,17 @@ const skillsItems = [
 export const Skills = () => {
   return (
     <StyledSkills>
-      <SectionTitle
-        title="My Tech Stack"
-        text="Technologies I’ve been working with recently"
-      />
-      <FlexWrapper justify="space-between" wrap="wrap" gap="100px">
-        {skillsItems.map((item, index) => (
-          <Skill key={index} title={item} />
-        ))}
-      </FlexWrapper>
+      <Container>
+        <SectionTitle
+          title="My Tech Stack"
+          text="Technologies I’ve been working with recently"
+        />
+        <FlexWrapper justify="space-around" wrap="wrap" gap="150px">
+          {skillsItems.map((item, index) => (
+            <Skill key={index} title={item} />
+          ))}
+        </FlexWrapper>
+      </Container>
     </StyledSkills>
   );
 };
@@ -36,6 +40,5 @@ const StyledSkills = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 200px;
-  background-color: #efa6ff;
+  ${myTheme.sectionMarginBottom}
 `;

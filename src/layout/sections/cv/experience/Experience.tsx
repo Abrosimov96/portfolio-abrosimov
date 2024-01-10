@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { FlexWrapper } from '../../../../components/FlexWrapper';
 import { Work } from './work/Work';
 import { CVTitle } from '../CVTitle';
 
@@ -35,7 +34,6 @@ export const Experience = (props: ExperiencePropsType) => {
   return (
     <StyledExperience>
       <CVTitle>{props.title}</CVTitle>
-      <FlexWrapper direction="column"></FlexWrapper>
       {workItems.map((item) => (
         <Work {...item} />
       ))}
@@ -43,6 +41,4 @@ export const Experience = (props: ExperiencePropsType) => {
   );
 };
 
-const StyledExperience = styled.div`
-  border: 1px solid red;
-`;
+const StyledExperience = styled.div``;
