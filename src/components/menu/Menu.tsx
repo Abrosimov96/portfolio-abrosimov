@@ -11,7 +11,7 @@ export const Menu = (props: MenuPropsType) => {
       <ul>
         {props.items.map((item, index) => (
           <li key={index}>
-            <a href="#">{item}</a>
+            <a href={`#${item}`}>{item}</a>
           </li>
         ))}
       </ul>

@@ -6,7 +6,7 @@ import { Container } from '../../../components/Container.styled';
 
 export const Main = () => {
   return (
-    <StyledMain>
+    <StyledMain id="Home">
       <Container>
         <FlexWrapper justify="space-between" align="center">
           <MainTitle>

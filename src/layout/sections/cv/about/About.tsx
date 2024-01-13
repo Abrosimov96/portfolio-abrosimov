@@ -9,7 +9,7 @@ type AboutPropsType = {
 
 export const About = (props: AboutPropsType) => {
   return (
-    <StyledAbout>
+    <StyledAbout id="About">
       <CVTitle>{props.title}</CVTitle>
       <AboutDescription>{props.description}</AboutDescription>
     </StyledAbout>

@@ -6,6 +6,7 @@ type ProjectPropsType = {
   title: string;
   text: string;
   techStack: string[];
+  linkGit: string;
 };
 
 export const Project = (props: ProjectPropsType) => {
@@ -16,6 +17,7 @@ export const Project = (props: ProjectPropsType) => {
         title={props.title}
         text={props.text}
         techStack={props.techStack}
+        linkGit={props.linkGit}
       />
     </StyledProject>
   );

@@ -5,7 +5,7 @@ import { SectionTitle } from '../SectionTitle';
 
 export const Contact = () => {
   return (
-    <StyledContact>
+    <StyledContact id="Contact">
       <SectionTitle
         title="Contact"
         text="I Am Available For Freelance"
@@ -38,7 +38,7 @@ const StyledForm = styled.form`
   }
 
   ${Button} {
-    margin: 20px auto;
+    margin: 30px auto;
   }
 `;
 

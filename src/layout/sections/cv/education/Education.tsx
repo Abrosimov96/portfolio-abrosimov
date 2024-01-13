@@ -5,10 +5,16 @@ import { Work } from '../experience/work/Work';
 
 const educationItems = [
   {
-    jobTitle: 'Bachelor in Electronics & Communication',
-    company: 'Bangalore Instutute of Technology',
+    jobTitle: `Bachelor's degree Informatics & Computer Science`,
+    company: 'Burgas Free University',
     type: 'Full Time',
-    period: { from: 'Sep 2015', to: 'Dec 2020' },
+    period: { from: 'Sep 2013', to: 'June 2018' },
+  },
+  {
+    jobTitle: `Master of Artificial Intelligence & Robotics`,
+    company: 'Burgas Free University',
+    type: 'Full Time',
+    period: { from: 'Sep 2018', to: 'June 2020' },
   },
 ];
 

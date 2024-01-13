@@ -7,6 +7,7 @@ type ProjectDescriptionPropsType = {
   title: string;
   text: string;
   techStack: string[];
+  linkGit: string;
 };
 
 export const ProjectDescription = (
@@ -40,7 +41,7 @@ export const ProjectDescription = (
               </Link>
             </FlexWrapper>
             <FlexWrapper>
-              <Link href="">
+              <Link href={props.linkGit}>
                 <Icon
                   iconId={'linkGit'}
                   width="20"

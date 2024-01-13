@@ -5,6 +5,7 @@ import { myTheme } from '../../../styles/Theme.styled';
 import { About } from './about/About';
 import { Education } from './education/Education';
 import { Experience } from './experience/Experience';
+import drawing from '../../../assets/images/drawing.svg';
 
 export const CV = () => {
   return (
@@ -16,14 +17,16 @@ export const CV = () => {
               <About
                 title={'About Me'}
                 description={
-                  'The Generator App is an online tool that helps you to export ready-made templates ready to work as your future website. It helps you to combine slides, panels and other components and export it as a set of static files: HTML/CSS/JS.'
+                  'As an experienced frontend specialist, I am a master in web development, deeply understanding HTML, CSS, and JavaScript. My successful projects, where I utilized frameworks like React and Angular, attest to my expertise in creating modern and responsive user interfaces. My skills in optimizing performance and attention to detail make me a sought-after professional in crafting efficient and intuitively designed user interfaces.'
                 }
               />
               <Experience title={'Work Experience'} />
               <Education title={'Education'} />
             </FlexWrapper>
           </CVContainer>
-          <CVWrapper />
+          <CVWrapper>
+            <img src={drawing} alt="drawing" />
+          </CVWrapper>
         </FlexWrapper>
       </Container>
     </StyledCV>
@@ -32,6 +35,7 @@ export const CV = () => {
 
 const StyledCV = styled.section`
   ${myTheme.sectionMarginBottom}
+  position: relative;
 `;
 
 const CVContainer = styled.div`
@@ -40,4 +44,8 @@ const CVContainer = styled.div`
 
 const CVWrapper = styled.div`
   width: 100%;
+  img {
+    position: absolute;
+    right: 0;
+  }
 `;
