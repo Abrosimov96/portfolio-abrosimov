@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { Container } from '../../../components/Container.styled';
 import { FlexWrapper } from '../../../components/FlexWrapper';
 import { Icon } from '../../../components/icon/Icon';
-import { myTheme } from '../../../styles/Theme.styled';
 import { SectionTitle } from '../SectionTitle';
-import { Skill } from './skill/Skill';
+import { S } from './Skills_Styles';
 
 const skillsItems = [
   'html',
@@ -20,7 +18,7 @@ const skillsItems = [
   'github',
 ];
 
-export const Skills = () => {
+export const Skills: React.FC = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 768;
 
@@ -32,16 +30,16 @@ export const Skills = () => {
       window.removeEventListener('resize', handleWindowResize);
   }, []);
   return (
-    <StyledSkills id="Tech Stack">
+    <S.Skills id="Tech Stack">
       <Container>
         <SectionTitle
           title="My Tech Stack"
           text="Technologies I’ve been working with recently"
         />
         {width < breakpoint ? (
-          <MobileSkills>
+          <S.MobileSkills>
             {skillsItems.map((item, index) => (
-              <MobileSkill key={index}>
+              <S.MobileSkill key={index}>
                 <Icon
                   iconId={item}
                   width="100"
@@ -49,44 +47,23 @@ export const Skills = () => {
                   viewBox="0 0 120 110"
                 />
                 {item}
-              </MobileSkill>
+              </S.MobileSkill>
             ))}
-          </MobileSkills>
+          </S.MobileSkills>
         ) : (
           <FlexWrapper justify="space-around" wrap="wrap" gap="150px">
             {skillsItems.map((item, index) => (
-              <Skill key={index} title={item} />
+              <Icon
+                key={index}
+                iconId={item}
+                width="100"
+                height="100"
+                viewBox="0 0 120 110"
+              />
             ))}
           </FlexWrapper>
         )}
       </Container>
-    </StyledSkills>
+    </S.Skills>
   );
 };
-
-const StyledSkills = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  ${myTheme.sectionMarginBottom}
-`;
-
-const MobileSkills = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-`;
-
-const MobileSkill = styled.li`
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 28px;
-
-  font-weight: 400;
-  line-height: 1.5; /* 140% */
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-`;

@@ -1,13 +1,14 @@
-import styled from 'styled-components';
-import { myTheme } from '../../styles/Theme.styled';
+import { S } from './Menu_Styles';
 
 type MenuPropsType = {
   items: string[];
 };
 
-export const Menu = (props: MenuPropsType) => {
+export const Menu: React.FC<MenuPropsType> = (
+  props: MenuPropsType,
+) => {
   return (
-    <StyledMenu>
+    <S.Menu>
       <ul>
         {props.items.map((item, index) => (
           <li key={index}>
@@ -15,18 +16,6 @@ export const Menu = (props: MenuPropsType) => {
           </li>
         ))}
       </ul>
-    </StyledMenu>
+    </S.Menu>
   );
 };
-
-const StyledMenu = styled.nav`
-  ul {
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    flex-wrap: wrap;
-    li {
-      color: ${myTheme.colors.grey.dark};
-    }
-  }
-`;

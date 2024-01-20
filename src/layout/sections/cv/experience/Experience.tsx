@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Work } from './work/Work';
 import { CVTitle } from '../CVTitle';
+import { S } from '../CV_Styles';
+import { Progress } from '../progress/Progress';
 
 const workItems = [
   {
@@ -30,15 +30,15 @@ type ExperiencePropsType = {
   title: string;
 };
 
-export const Experience = (props: ExperiencePropsType) => {
+export const Experience: React.FC<ExperiencePropsType> = (
+  props: ExperiencePropsType,
+) => {
   return (
-    <StyledExperience>
+    <S.Experience>
       <CVTitle>{props.title}</CVTitle>
       {workItems.map((item) => (
-        <Work {...item} />
+        <Progress {...item} />
       ))}
-    </StyledExperience>
+    </S.Experience>
   );
 };
-
-const StyledExperience = styled.div``;

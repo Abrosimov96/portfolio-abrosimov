@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { SectionTitle } from '../SectionTitle';
 import { Project } from './project/Project';
 import project1 from '../../../assets/images/creative_agency.webp';
@@ -9,7 +8,7 @@ import project5 from '../../../assets/images/proj5.webp';
 import project6 from '../../../assets/images/proj6.webp';
 import { FlexWrapper } from '../../../components/FlexWrapper';
 import { Container } from '../../../components/Container.styled';
-import { myTheme } from '../../../styles/Theme.styled';
+import { S } from './Project_Styles';
 
 const projectsItems = [
   {
@@ -56,9 +55,9 @@ const projectsItems = [
   },
 ];
 
-export const Projects = () => {
+export const Projects: React.FC = () => {
   return (
-    <StyledProjects id="Projects">
+    <S.Projects id="Projects">
       <Container>
         <SectionTitle
           title="Projects"
@@ -73,11 +72,6 @@ export const Projects = () => {
           ))}
         </FlexWrapper>
       </Container>
-    </StyledProjects>
+    </S.Projects>
   );
 };
-
-const StyledProjects = styled.section`
-  line-height: 12px;
-  ${myTheme.sectionMarginBottom}
-`;

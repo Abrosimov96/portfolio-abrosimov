@@ -1,7 +1,6 @@
-import styled from 'styled-components';
 import { FlexWrapper } from '../../../../../components/FlexWrapper';
 import { Icon } from '../../../../../components/icon/Icon';
-import { myTheme } from '../../../../../styles/Theme.styled';
+import { S } from '../../Project_Styles';
 
 type ProjectDescriptionPropsType = {
   title: string;
@@ -10,27 +9,27 @@ type ProjectDescriptionPropsType = {
   linkGit: string;
 };
 
-export const ProjectDescription = (
-  props: ProjectDescriptionPropsType,
-) => {
+export const ProjectDescription: React.FC<
+  ProjectDescriptionPropsType
+> = (props: ProjectDescriptionPropsType) => {
   return (
-    <StyledDescription>
-      <Title>{props.title}</Title>
-      <DescriptionWrapper>
-        <Text>{props.text}</Text>
-        <StackWrapper>
-          <TechStack>
+    <S.Description>
+      <S.Title>{props.title}</S.Title>
+      <S.DescriptionWrapper>
+        <S.Text>{props.text}</S.Text>
+        <S.StackWrapper>
+          <S.TechStack>
             TechStack:{' '}
             {props.techStack.map((stack, index, arr) => (
-              <Stack key={stack}>
+              <S.Stack key={stack}>
                 {stack}
                 {arr.length - 1 !== index && ', '}
-              </Stack>
+              </S.Stack>
             ))}
-          </TechStack>
+          </S.TechStack>
           <FlexWrapper justify="space-between">
             <FlexWrapper>
-              <Link href="">
+              <S.Link href="">
                 <Icon
                   iconId={'link'}
                   width="20"
@@ -38,10 +37,10 @@ export const ProjectDescription = (
                   viewBox="0 0 20 20"
                 />
                 Live Preview
-              </Link>
+              </S.Link>
             </FlexWrapper>
             <FlexWrapper>
-              <Link href={props.linkGit}>
+              <S.Link href={props.linkGit}>
                 <Icon
                   iconId={'linkGit'}
                   width="20"
@@ -49,69 +48,11 @@ export const ProjectDescription = (
                   viewBox="0 0 20 20"
                 />
                 View Code
-              </Link>
+              </S.Link>
             </FlexWrapper>
           </FlexWrapper>
-        </StackWrapper>
-      </DescriptionWrapper>
-    </StyledDescription>
+        </S.StackWrapper>
+      </S.DescriptionWrapper>
+    </S.Description>
   );
 };
-
-const StyledDescription = styled.div`
-  display: flex;
-  height: calc(100% - 260px);
-  flex-direction: column;
-  gap: 20px;
-  padding: 25px 30px;
-`;
-
-const Title = styled.h4`
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 26px; /* 92.857% */
-  margin-bottom: 17px;
-  color: ${myTheme.colors.project};
-`;
-
-const DescriptionWrapper = styled.div`
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-const Text = styled.p`
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 26px; /* 144.444% */
-  margin-bottom: 12px;
-  color: ${myTheme.colors.grey.dark};
-`;
-
-const TechStack = styled.span`
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 26px;
-  color: ${myTheme.colors.grey.dark};
-`;
-
-const StackWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 21px;
-`;
-
-const Stack = styled.span``;
-
-const Link = styled.a`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 26px; /* 162.5% */
-  text-decoration-line: underline;
-  color: ${myTheme.colors.project};
-`;

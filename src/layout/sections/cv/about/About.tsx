@@ -1,25 +1,18 @@
-import styled from 'styled-components';
-import { myTheme } from '../../../../styles/Theme.styled';
 import { CVTitle } from '../CVTitle';
+import { S } from '../CV_Styles';
 
 type AboutPropsType = {
   title: string;
   description: string;
 };
 
-export const About = (props: AboutPropsType) => {
+export const About: React.FC<AboutPropsType> = (
+  props: AboutPropsType,
+) => {
   return (
-    <StyledAbout id="About">
+    <S.About id="About">
       <CVTitle>{props.title}</CVTitle>
-      <AboutDescription>{props.description}</AboutDescription>
-    </StyledAbout>
+      <S.AboutDescription>{props.description}</S.AboutDescription>
+    </S.About>
   );
 };
-
-const StyledAbout = styled.div``;
-
-const AboutDescription = styled.p`
-  font-size: 18px;
-  font-weight: 400;
-  color: ${myTheme.colors.grey.dark};
-`;

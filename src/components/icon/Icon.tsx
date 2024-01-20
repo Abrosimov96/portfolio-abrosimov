@@ -8,7 +8,9 @@ type IconPropsType = {
   fill?: string;
 };
 
-export const Icon = (props: IconPropsType) => {
+export const Icon: React.FC<IconPropsType> = (
+  props: IconPropsType,
+) => {
   return (
     <svg
       width={props.width || '30'}

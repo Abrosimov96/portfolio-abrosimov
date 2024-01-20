@@ -1,13 +1,15 @@
-import styled from 'styled-components';
 import { Icon } from '../icon/Icon';
+import { S } from './Social_Styles';
 
 type SocialPropsType = {
   items: string[];
 };
 
-export const Social = (props: SocialPropsType) => {
+export const Social: React.FC<SocialPropsType> = (
+  props: SocialPropsType,
+) => {
   return (
-    <StyledSocial>
+    <S.Social>
       {props.items.map((item, index) => (
         <li key={index}>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -16,11 +18,6 @@ export const Social = (props: SocialPropsType) => {
           </a>
         </li>
       ))}
-    </StyledSocial>
+    </S.Social>
   );
 };
-
-const StyledSocial = styled.ul`
-  display: flex;
-  gap: 20px;
-`;

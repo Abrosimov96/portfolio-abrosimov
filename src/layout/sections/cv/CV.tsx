@@ -1,12 +1,11 @@
-import styled from 'styled-components';
 import { Container } from '../../../components/Container.styled';
 import { FlexWrapper } from '../../../components/FlexWrapper';
-import { myTheme } from '../../../styles/Theme.styled';
 import { About } from './about/About';
 import { Education } from './education/Education';
 import { Experience } from './experience/Experience';
 import drawing from '../../../assets/images/drawing.svg';
 import { useEffect, useState } from 'react';
+import { S } from './CV_Styles';
 
 export const CV: React.FC = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -20,10 +19,10 @@ export const CV: React.FC = () => {
       window.removeEventListener('resize', handleWindowResize);
   }, []);
   return (
-    <StyledCV>
+    <S.CV>
       <Container>
         <FlexWrapper justify="center">
-          <CVContainer>
+          <S.CVContainer>
             <FlexWrapper direction="column" gap="38px">
               <About
                 title={'About Me'}
@@ -34,31 +33,14 @@ export const CV: React.FC = () => {
               <Experience title={'Work Experience'} />
               <Education title={'Education'} />
             </FlexWrapper>
-          </CVContainer>
+          </S.CVContainer>
           {width > breakpoint && (
-            <CVWrapper>
+            <S.CVWrapper>
               <img src={drawing} alt="drawing" />
-            </CVWrapper>
+            </S.CVWrapper>
           )}
         </FlexWrapper>
       </Container>
-    </StyledCV>
+    </S.CV>
   );
 };
-
-const StyledCV = styled.section`
-  ${myTheme.sectionMarginBottom}
-  position: relative;
-`;
-
-const CVContainer = styled.div`
-  max-width: 710px;
-`;
-
-const CVWrapper = styled.div`
-  width: 100%;
-  img {
-    position: absolute;
-    right: 0;
-  }
-`;

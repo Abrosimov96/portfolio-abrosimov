@@ -1,37 +1,17 @@
-import styled from 'styled-components';
-import { myTheme } from '../../styles/Theme.styled';
+import { S } from './SectionTitle_styles';
 
 type SectionTitleProps = {
   title: string;
   text: string;
 };
 
-export const SectionTitle = (props: SectionTitleProps) => {
+export const SectionTitle: React.FC<SectionTitleProps> = (
+  props: SectionTitleProps,
+) => {
   return (
-    <StyledSectionTitle>
-      <Title>{props.title}</Title>
-      <Text>{props.text}</Text>
-    </StyledSectionTitle>
+    <S.SectionTitle>
+      <S.Title>{props.title}</S.Title>
+      <S.Text>{props.text}</S.Text>
+    </S.SectionTitle>
   );
 };
-
-export const StyledSectionTitle = styled.div`
-  margin-bottom: 110px;
-`;
-
-export const Title = styled.h2`
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1; /* 54.167% */
-  color: ${myTheme.colors.secondary};
-  text-align: center;
-  margin-bottom: 50px;
-`;
-
-export const Text = styled.h3`
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1; /* 81.25% */
-  color: ${myTheme.colors.grey.dark};
-  text-align: center;
-`;

@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import { FlexWrapper } from '../../../../components/FlexWrapper';
 import { CVTitle } from '../CVTitle';
-import { Work } from '../experience/work/Work';
+import { S } from '../CV_Styles';
+import { Progress } from '../progress/Progress';
 
 const educationItems = [
   {
@@ -24,14 +24,12 @@ type EducationPropsType = {
 
 export const Education = (props: EducationPropsType) => {
   return (
-    <StyledEducation>
+    <S.Education>
       <CVTitle>{props.title}</CVTitle>
       <FlexWrapper direction="column"></FlexWrapper>
       {educationItems.map((item) => (
-        <Work {...item} />
+        <Progress {...item} />
       ))}
-    </StyledEducation>
+    </S.Education>
   );
 };
-
-const StyledEducation = styled.div``;

@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { Container } from '../../components/Container.styled';
 import { FlexWrapper } from '../../components/FlexWrapper';
 import { Logo } from '../../components/logo/Logo';
 import { Menu } from '../../components/menu/Menu';
-
 import { Social } from '../../components/social/Social';
+import { S } from './Header_styles';
 import { MobileMenu } from './mobileMenu/MobileMenu';
 
 const menuItems = [
@@ -18,7 +17,7 @@ const menuItems = [
 
 const socialItems = ['git-link', 'twitter', 'linkedIn'];
 
-export const Header = () => {
+export const Header: React.FC = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 769;
 
@@ -29,8 +28,9 @@ export const Header = () => {
     return () =>
       window.removeEventListener('resize', handleWindowResize);
   }, []);
+
   return (
-    <StyledHeader>
+    <S.Header>
       <Container>
         <FlexWrapper align="center" justify="space-between">
           <Logo />
@@ -49,16 +49,6 @@ export const Header = () => {
           </FlexWrapper>
         </FlexWrapper>
       </Container>
-    </StyledHeader>
+    </S.Header>
   );
 };
-
-const StyledHeader = styled.header`
-  background: linear-gradient(#2c2c2c80, #ffffff00 90%);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99999;
-  padding: 40px 0 20px;
-`;

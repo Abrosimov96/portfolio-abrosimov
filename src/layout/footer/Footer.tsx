@@ -1,15 +1,13 @@
-import styled from 'styled-components';
 import { Container } from '../../components/Container.styled';
 import { Email } from '../../components/Email';
 import { FlexWrapper } from '../../components/FlexWrapper';
 import { Logo } from '../../components/logo/Logo';
 import { Menu } from '../../components/menu/Menu';
-
 import { Phone } from '../../components/Phone';
 import { Social } from '../../components/social/Social';
-import { myTheme } from '../../styles/Theme.styled';
+import { S } from './Footer_Styles';
 
-const socialItems = ['git', 'twitter', 'linkedIn'];
+const socialItems = ['git-link', 'twitter', 'linkedIn'];
 
 const menuItems = [
   'Home',
@@ -19,11 +17,11 @@ const menuItems = [
   'Contact',
 ];
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
-    <StyledFooter>
+    <S.Footer>
       <Container>
-        <FooterWrapper>
+        <S.FooterWrapper>
           <FlexWrapper
             justify="space-around"
             align="center"
@@ -40,50 +38,17 @@ export const Footer = () => {
               <Social items={socialItems} />
             </FlexWrapper>
           </FlexWrapper>
-        </FooterWrapper>
-        <CopyrightWrapper>
+        </S.FooterWrapper>
+        <S.CopyrightWrapper>
           <FlexWrapper justify="space-between" align="center">
             <Menu items={menuItems} />
-            <Copyright>
+            <S.Copyright>
               Designed and built by <span>Pavan MG</span> with{' '}
               <span>Love</span> & <span>Coffee</span>
-            </Copyright>
+            </S.Copyright>
           </FlexWrapper>
-        </CopyrightWrapper>
+        </S.CopyrightWrapper>
       </Container>
-    </StyledFooter>
+    </S.Footer>
   );
 };
-
-const StyledFooter = styled.footer``;
-
-const Copyright = styled.p`
-  color: ${myTheme.colors.grey.dark};
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.4; /* 144.444% */
-  span {
-    background-image: linear-gradient(
-      90deg,
-      #13b0f5 -2.06%,
-      #e70faa 100%
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-`;
-
-const FooterWrapper = styled.div`
-  padding-bottom: 50px;
-  border-bottom: 2px solid ${myTheme.colors.grey.light};
-`;
-
-const CopyrightWrapper = styled.div`
-  padding: 45px 0 60px;
-  @media screen and (max-width: 1015px) {
-    ${FlexWrapper} {
-      flex-direction: column;
-      gap: 20px;
-    }
-  }
-`;
