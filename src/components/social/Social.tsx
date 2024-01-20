@@ -10,6 +10,7 @@ export const Social = (props: SocialPropsType) => {
     <StyledSocial>
       {props.items.map((item, index) => (
         <li key={index}>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a href="#">
             <Icon iconId={item} />
           </a>

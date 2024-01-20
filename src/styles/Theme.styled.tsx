@@ -14,4 +14,9 @@ export const myTheme = {
     gradient: '90deg, #13b0f5 -2.06%,#e70faa 100%',
   },
   sectionMarginBottom: 'margin-bottom: 200px;',
+  media: {
+    desktop: 'screen and (max-width: 992px)',
+    tablet: 'screen and (max-width: 768px)',
+    mobile: 'screen amd (max-width: 576px)',
+  },
 };

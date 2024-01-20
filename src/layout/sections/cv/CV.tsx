@@ -6,12 +6,23 @@ import { About } from './about/About';
 import { Education } from './education/Education';
 import { Experience } from './experience/Experience';
 import drawing from '../../../assets/images/drawing.svg';
+import { useEffect, useState } from 'react';
 
-export const CV = () => {
+export const CV: React.FC = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 992;
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleWindowResize);
+
+    return () =>
+      window.removeEventListener('resize', handleWindowResize);
+  }, []);
   return (
     <StyledCV>
       <Container>
-        <FlexWrapper justify="space-between">
+        <FlexWrapper justify="center">
           <CVContainer>
             <FlexWrapper direction="column" gap="38px">
               <About
@@ -24,9 +35,11 @@ export const CV = () => {
               <Education title={'Education'} />
             </FlexWrapper>
           </CVContainer>
-          <CVWrapper>
-            <img src={drawing} alt="drawing" />
-          </CVWrapper>
+          {width > breakpoint && (
+            <CVWrapper>
+              <img src={drawing} alt="drawing" />
+            </CVWrapper>
+          )}
         </FlexWrapper>
       </Container>
     </StyledCV>

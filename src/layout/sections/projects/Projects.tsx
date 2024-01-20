@@ -64,7 +64,10 @@ export const Projects = () => {
           title="Projects"
           text="Things I’ve built so far"
         />
-        <FlexWrapper wrap="wrap" columnGap="34px">
+        <FlexWrapper
+          wrap="wrap"
+          justify="space-around"
+          columnGap="34px">
           {projectsItems.map((item, index) => (
             <Project {...item} />
           ))}

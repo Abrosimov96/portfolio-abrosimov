@@ -4,6 +4,7 @@ import { Email } from '../../components/Email';
 import { FlexWrapper } from '../../components/FlexWrapper';
 import { Logo } from '../../components/logo/Logo';
 import { Menu } from '../../components/menu/Menu';
+
 import { Phone } from '../../components/Phone';
 import { Social } from '../../components/social/Social';
 import { myTheme } from '../../styles/Theme.styled';
@@ -23,9 +24,17 @@ export const Footer = () => {
     <StyledFooter>
       <Container>
         <FooterWrapper>
-          <FlexWrapper justify="space-between" align="center">
+          <FlexWrapper
+            justify="space-around"
+            align="center"
+            wrap="wrap"
+            gap="20px">
             <Logo />
-            <FlexWrapper gap="50px" align="center">
+            <FlexWrapper
+              wrap="wrap"
+              gap="50px"
+              justify="space-around"
+              align="center">
               <Phone>+91 12345 09876</Phone>
               <Email>info@example.com</Email>
               <Social items={socialItems} />
@@ -71,4 +80,10 @@ const FooterWrapper = styled.div`
 
 const CopyrightWrapper = styled.div`
   padding: 45px 0 60px;
+  @media screen and (max-width: 1015px) {
+    ${FlexWrapper} {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
 `;

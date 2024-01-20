@@ -22,7 +22,7 @@ export const Work = (props: WorkPropsType) => {
         <JobTitle>{props.jobTitle}</JobTitle>
         <JobType>{props.type}</JobType>
       </FlexWrapper>
-      <FlexWrapper justify="space-between" align="end">
+      <FlexWrapper wrap="wrap" justify="space-between" align="end">
         <JobInfoWrapper>
           <FlexWrapper align="center">
             <Icon

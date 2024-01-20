@@ -3,12 +3,17 @@ import { FlexWrapper } from '../../../components/FlexWrapper';
 import portrait from '../../../assets/images/photo.webp';
 import { myTheme } from '../../../styles/Theme.styled';
 import { Container } from '../../../components/Container.styled';
+import { font } from './../../../styles/Common';
 
-export const Main = () => {
+export const Main: React.FC = () => {
   return (
     <StyledMain id="Home">
       <Container>
-        <FlexWrapper justify="space-between" align="center">
+        <FlexWrapper
+          wrap="wrap"
+          justify="space-around"
+          align="center"
+          gap="50px">
           <MainTitle>
             Hi 👋,
             <br /> My name is
@@ -31,8 +36,12 @@ const StyledMain = styled.section`
 `;
 
 const MainTitle = styled.h1`
-  font-size: 58px;
-  font-weight: 700;
+  ${font({
+    family: "'Poppins', sans-serif",
+    weight: 700,
+    Fmax: 58,
+    Fmin: 36,
+  })}
   letter-spacing: -1px;
   color: ${myTheme.colors.secondary};
 `;
@@ -51,7 +60,7 @@ const PhotoWrapper = styled.div`
   border-radius: 100%;
   background-image: linear-gradient(${myTheme.colors.gradient});
   position: relative;
-
+  /* 
   &::before {
     content: '';
     position: absolute;
@@ -71,7 +80,7 @@ const PhotoWrapper = styled.div`
     border-width: 1px;
     border-style: solid;
     transform: rotate(145deg);
-  }
+  } */
 `;
 
 const Photo = styled.img`

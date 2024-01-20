@@ -1,21 +1,28 @@
 import styled from 'styled-components';
 import { Button } from '../../../components/Button';
+import { Container } from '../../../components/Container.styled';
 import { myTheme } from '../../../styles/Theme.styled';
 import { SectionTitle } from '../SectionTitle';
 
 export const Contact = () => {
   return (
     <StyledContact id="Contact">
-      <SectionTitle
-        title="Contact"
-        text="I Am Available For Freelance"
-      />
-      <StyledForm>
-        <Field type={'text'} placeholder={'Name'} />
-        <Field type={'text'} placeholder={'Subject'} />
-        <Field placeholder={'Message...'} as={'textarea'} />
-        <Button type={'submit'}>Send Message</Button>
-      </StyledForm>
+      <Container>
+        <SectionTitle
+          title="Contact"
+          text="I Am Available For Freelance"
+        />
+        <StyledForm>
+          <Field type={'text'} placeholder={'Name'} />
+          <Field type={'text'} placeholder={'Subject'} />
+          <Field
+            className="areaField"
+            placeholder={'Message...'}
+            as={'textarea'}
+          />
+          <Button type={'submit'}>Send Message</Button>
+        </StyledForm>
+      </Container>
     </StyledContact>
   );
 };
@@ -32,7 +39,7 @@ const StyledForm = styled.form`
   flex-direction: column;
   gap: 10px;
 
-  textarea {
+  .areaField {
     resize: none;
     height: 155px;
   }
