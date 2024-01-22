@@ -1,6 +1,7 @@
 import { CVTitle } from '../CVTitle';
 import { S } from '../CV_Styles';
 import { Progress } from '../progress/Progress';
+import { Slide } from 'react-awesome-reveal';
 
 const workItems = [
   {
@@ -36,9 +37,11 @@ export const Experience: React.FC<ExperiencePropsType> = (
   return (
     <S.Experience>
       <CVTitle>{props.title}</CVTitle>
-      {workItems.map((item) => (
-        <Progress {...item} />
-      ))}
+      <Slide cascade={true} damping={0.25} triggerOnce={true}>
+        {workItems.map((item, index) => (
+          <Progress key={index} {...item} />
+        ))}
+      </Slide>
     </S.Experience>
   );
 };

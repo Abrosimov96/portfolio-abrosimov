@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import { Container } from '../../components/Container.styled';
 import { FlexWrapper } from '../../components/FlexWrapper';
 import { Logo } from '../../components/logo/Logo';
-import { Menu } from '../../components/menu/Menu';
 import { Social } from '../../components/social/Social';
 import { S } from './Header_styles';
 import { MobileMenu } from './mobileMenu/MobileMenu';
+import { DesktopMenu } from './desktopMenu/DesktopMenu';
+import { GoTopBtn } from '../../components/goTopBtn/GoTopBtn';
 
 const menuItems = [
   'Home',
@@ -42,7 +43,7 @@ export const Header: React.FC = () => {
               </>
             ) : (
               <>
-                <Menu items={menuItems} />
+                <DesktopMenu items={menuItems} />
                 <Social items={socialItems} />
               </>
             )}

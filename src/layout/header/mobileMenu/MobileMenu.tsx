@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { S } from '../Header_styles';
+import { Menu } from '../menu/Menu';
 
 type MobileMenuPropsType = {
   items: string[];
@@ -7,19 +9,20 @@ type MobileMenuPropsType = {
 export const MobileMenu: React.FC<MobileMenuPropsType> = (
   props: MobileMenuPropsType,
 ) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onBurgerBtnClick = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <S.MobileMenu>
-      <S.BurgerButton isOpen={false}>
+      <S.BurgerButton onClick={onBurgerBtnClick} isOpen={isOpen}>
         <span></span>
       </S.BurgerButton>
-      <S.MobileMenuPopup isOpen={false}>
-        <ul>
-          {props.items.map((item, index) => (
-            <li key={index}>
-              <a href={`#${item}`}>{item}</a>
-            </li>
-          ))}
-        </ul>
+      <S.MobileMenuPopup
+        onClick={() => setIsOpen(false)}
+        isOpen={isOpen}>
+        <Menu items={props.items} />
       </S.MobileMenuPopup>
     </S.MobileMenu>
   );

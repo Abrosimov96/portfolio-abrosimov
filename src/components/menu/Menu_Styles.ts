@@ -8,7 +8,13 @@ const Menu = styled.nav`
     justify-content: center;
     flex-wrap: wrap;
     li {
-      color: ${myTheme.colors.grey.dark};
+      a {
+        color: ${myTheme.colors.grey.dark};
+        transition: color 0.3s ease-in-out;
+        &:hover {
+          color: ${myTheme.colors.primary};
+        }
+      }
     }
   }
 `;

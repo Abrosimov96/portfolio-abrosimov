@@ -20,7 +20,6 @@ export const GlobalStyle = createGlobalStyle`
     color: ${myTheme.colors.grey.dark};
     line-height: 1.2;
     background-color: ${myTheme.colors.primary};
-    min-width: 360px;
   }
 
   a{

@@ -5,6 +5,7 @@ import { myTheme } from '../../styles/Theme.styled';
 const Footer = styled.footer``;
 
 const Copyright = styled.p`
+  text-align: center;
   color: ${myTheme.colors.grey.dark};
   font-size: 18px;
   font-weight: 400;

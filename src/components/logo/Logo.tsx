@@ -1,9 +1,13 @@
 import { Icon } from '../icon/Icon';
 import { S } from './Logo_Styles';
+import { animateScroll as scroll } from 'react-scroll';
 
 export const Logo: React.FC = () => {
   return (
-    <S.Link href="#">
+    <S.Link
+      onClick={() => {
+        scroll.scrollToTop();
+      }}>
       <Icon
         iconId={'logo'}
         width="28"

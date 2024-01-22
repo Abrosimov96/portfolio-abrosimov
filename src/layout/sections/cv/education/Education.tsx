@@ -2,6 +2,7 @@ import { FlexWrapper } from '../../../../components/FlexWrapper';
 import { CVTitle } from '../CVTitle';
 import { S } from '../CV_Styles';
 import { Progress } from '../progress/Progress';
+import { Slide } from 'react-awesome-reveal';
 
 const educationItems = [
   {
@@ -26,10 +27,12 @@ export const Education = (props: EducationPropsType) => {
   return (
     <S.Education>
       <CVTitle>{props.title}</CVTitle>
-      <FlexWrapper direction="column"></FlexWrapper>
-      {educationItems.map((item) => (
-        <Progress {...item} />
-      ))}
+
+      <Slide cascade={true} damping={0.25} triggerOnce={true}>
+        {educationItems.map((item, index) => (
+          <Progress key={index} {...item} />
+        ))}
+      </Slide>
     </S.Education>
   );
 };

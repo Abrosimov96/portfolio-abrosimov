@@ -10,7 +10,7 @@ export const About: React.FC<AboutPropsType> = (
   props: AboutPropsType,
 ) => {
   return (
-    <S.About id="About">
+    <S.About>
       <CVTitle>{props.title}</CVTitle>
       <S.AboutDescription>{props.description}</S.AboutDescription>
     </S.About>

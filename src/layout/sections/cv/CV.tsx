@@ -19,7 +19,7 @@ export const CV: React.FC = () => {
       window.removeEventListener('resize', handleWindowResize);
   }, []);
   return (
-    <S.CV>
+    <S.CV id="About">
       <Container>
         <FlexWrapper justify="center">
           <S.CVContainer>

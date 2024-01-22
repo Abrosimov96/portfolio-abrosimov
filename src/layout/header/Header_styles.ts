@@ -15,19 +15,20 @@ const MobileMenu = styled.nav``;
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`
   position: fixed;
-  top: -100px;
-  right: -100px;
-  width: 200px;
-  height: 200px;
+  cursor: pointer;
+  top: 28px;
+  right: 0px;
+  width: 50px;
+  height: 50px;
   z-index: 999999;
   span {
     display: block;
     width: 36px;
     height: 2px;
-    background-color: ${myTheme.colors.secondary};
+    background-color: ${myTheme.colors.primary};
     position: absolute;
-    left: 50px;
-    bottom: 45px;
+    left: 10px;
+    top: 50%;
 
     ${(props) =>
       props.isOpen &&
@@ -40,7 +41,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       display: block;
       width: 36px;
       height: 2px;
-      background-color: ${myTheme.colors.secondary};
+      background-color: ${myTheme.colors.primary};
       position: absolute;
       transform: translateY(-10px);
 
@@ -56,7 +57,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       display: block;
       width: 24px;
       height: 2px;
-      background-color: ${myTheme.colors.secondary};
+      background-color: ${myTheme.colors.primary};
       position: absolute;
       transform: translateY(10px);
 
@@ -95,7 +96,28 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     align-items: center;
     gap: 50px;
     li {
-      color: ${myTheme.colors.grey.dark};
+      a {
+        color: ${myTheme.colors.primary};
+        font-size: 30px;
+      }
+    }
+  }
+`;
+
+const Menu = styled.nav`
+  ul {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    li {
+      a {
+        color: ${myTheme.colors.grey.dark};
+        transition: color 0.3s ease-in-out;
+        &:hover {
+          color: ${myTheme.colors.primary};
+        }
+      }
     }
   }
 `;
@@ -105,4 +127,5 @@ export const S = {
   MobileMenu,
   BurgerButton,
   MobileMenuPopup,
+  Menu,
 };

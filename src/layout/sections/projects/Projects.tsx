@@ -68,7 +68,7 @@ export const Projects: React.FC = () => {
           justify="space-around"
           columnGap="34px">
           {projectsItems.map((item, index) => (
-            <Project {...item} />
+            <Project key={index} {...item} />
           ))}
         </FlexWrapper>
       </Container>
